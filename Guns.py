@@ -37,8 +37,12 @@ class Guns:
         if state == 1:
             return Shoot.trajectory(angle, x_cord,y_cord, 800, 600, 40)
 
+
+
+
 from pygame.locals import (
     RLEACCEL,
     K_m,
     K_n,
+    K_SPACE
 )

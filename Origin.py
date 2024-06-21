@@ -16,8 +16,7 @@ class World:
         self.pic = self.surf.get_rect(topleft=(self.x, self.y))
         self.surf.fill((255, 0, 0))
         self.N = 500
-        self.Guns = Guns.Guns(PNG,self)
-        self.Enemy = Enemy.Enemy(self)
+        self.Guns = Guns.Guns(PNG)
         self.i = 0
         self.bullets = []
 
@@ -115,21 +114,6 @@ class World:
                         break
         return self.arr_world
 
-    def change_en_world(self):
-        goal_arr , goal_angle =self.Enemy.Goal_Bullet()
-        goal_state = self.Enemy.Shoot()
-        if goal_state == 1:
-            for i in self.arr_bullet:
-                if goal_arr[int(i[1] / 10) - 1][int(i[0] / 10) - 1] == 1:
-                    if int(i[0] / 10) - 1 < 0 or int(i[1] / 10) - 1 < 0:
-                        break
-                    self.arr_world[int(i[1] / 10) - 1][int(i[0] / 10) - 1] = 0
-                    self.arr_x.remove(int(i[0] / 10) - 1)
-                    self.arr_y.remove(int(i[1] / 10) - 1)
-                    break
-        return self.arr_world
-
-
 
 from pygame.locals import (
     K_ESCAPE,
@@ -157,8 +141,8 @@ X, Y = world.revival(SCREEN_WIDTH,SCREEN_HEIGHT)
 print(X,Y)
 X_enemy , Y_enemy = world.spawn_enemy(SCREEN_WIDTH,SCREEN_HEIGHT)
 print(X_enemy,Y_enemy)
-Guns = Guns.Guns(PNG,world)
-enemy = Enemy.Enemy(world)
+Guns = Guns.Guns(PNG)
+enemy = Enemy.Enemy()
 correct = 0
 
 
