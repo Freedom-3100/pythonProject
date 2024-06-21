@@ -39,16 +39,6 @@ class Guns:
 
 from pygame.locals import (
     RLEACCEL,
-    K_UP,
-    K_DOWN,
-    K_LEFT,
-    K_RIGHT,
-    K_ESCAPE,
-    KEYDOWN,
-    K_e,
-    K_r,
     K_m,
     K_n,
-    K_SPACE,
-    QUIT,
 )

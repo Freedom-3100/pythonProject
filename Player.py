@@ -1,4 +1,3 @@
-import Stack_List_Queue
 import pygame
 import image
 class Player(pygame.sprite.Sprite):
@@ -8,7 +7,6 @@ class Player(pygame.sprite.Sprite):
         self.picture = image.Picture(PNG)
         self.queue = self.picture.add_to_queue("flip")
         self.queue_1 = self.picture.add_to_queue("cut")
-        super(Player, self).__init__()
         self.surf = pygame.image.load('mirror.png').convert()
         self.surf.set_colorkey((255, 255, 255), RLEACCEL)
         self.worm = self.surf.get_rect()
@@ -86,14 +84,8 @@ from pygame.locals import (
     K_DOWN,
     K_LEFT,
     K_RIGHT,
-    K_ESCAPE,
-    KEYDOWN,
     K_e,
-    K_r,
-    K_m,
-    K_n,
-    K_SPACE,
-    QUIT,
+    K_r
 )
 
 SCREEN_WIDTH = 800
